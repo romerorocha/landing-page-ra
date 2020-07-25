@@ -1,3 +1,4 @@
-# Landing Page  - React Avançado
+# Landing Page Project
 
-"Landing Page" project for "React Avançado" course (by Willian Justen)
+- Course: "React Avançado"
+- Instructor: Willian Justen
