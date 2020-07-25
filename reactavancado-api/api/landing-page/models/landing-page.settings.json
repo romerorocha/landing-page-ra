@@ -1,0 +1,12 @@
+{
+  "kind": "singleType",
+  "collectionName": "landing_pages",
+  "info": {
+    "name": "landingPage"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {}
+}

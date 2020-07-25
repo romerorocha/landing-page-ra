@@ -1,0 +1,32 @@
+version: '3'
+services:
+  strapi-postgres:
+    image: postgres
+    container_name: strapi-postgres
+    environment:
+      POSTGRES_USER: strapi
+      POSTGRES_PASSWORD: strapi
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+    networks:
+      - strapi-local-network
+  strapi-pgadmin:
+    depends_on:
+      - strapi-postgres
+    image: dpage/pgadmin4:latest
+    container_name: strapi-pgadmin
+    environment:
+      LC_ALL: pt_BR.utf8
+      LANG: pt_BR.utf8
+      TZ: America/Recife
+      PGADMIN_DEFAULT_EMAIL: strapi@localhost.com
+      PGADMIN_DEFAULT_PASSWORD: password
+    ports:
+      - 34223:80
+    networks:
+      - strapi-local-network
+networks:
+  strapi-local-network:
+    driver: bridge
